@@ -24,7 +24,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       # - uses: actions/checkout@v3
       - name: CURL
-        run: |
-          curl
-          -XGET https://httpbin.org/get?key=${{ env.cron_key }}
-          -H "User-Agent: NNJZML/CRON:siejru"
+        run: curl -XGET https://httpbin.org/get?key=${{ env.cron_key }} -H "User-Agent:NNJZML/CRON:siejru"
+      - name: echo
+        run: echo ${${{ env.cron_key }}:0:6}
