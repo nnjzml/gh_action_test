@@ -14,14 +14,8 @@ env:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   CRON:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      # - uses: actions/checkout@v3
       - name: CURL
-        run: curl -XGET https://httpbin.org/get?key=${{ env.cron_key }} -H "User-Agent:NNJZML/CRON:${{ env.cron_key }}"
+        run: curl -XGET http://guide.nnjz.ml/api/admin/cron?key=${{ env.cron_key }} -H "User-Agent:NNJZML/CRON:${{ env.cron_key }}"
